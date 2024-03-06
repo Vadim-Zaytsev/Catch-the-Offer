@@ -21,10 +21,10 @@ function renderUI() {
             appElement.append(gameElements.get('settings'), container);
             break;
         case GAME_STATUSES.IN_PROGRESS:
-            sectionTwoElement.append(
-                gameElements.get('scores'),
-                gameElements.get('playing field')
-            );
+    sectionTwoElement.append(
+        gameElements.get('scores'),
+        gameElements.get('playing field')
+    );
             container.append(sectionTwoElement);
             appElement.append(gameElements.get('settings'), container);
 

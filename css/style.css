@@ -1,0 +1,374 @@
+/*-----------------in general--------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    /* height: 100vh; */
+    margin: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    background: url(../assets/images/background.png) no-repeat, radial-gradient(circle at 80% 95%, #4FABFF, #204891);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+ul {
+    list-style: none;
+}
+
+input:focus {
+    outline: none
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+}
+
+/*-----------------container----------------*/
+
+.container{
+    width: 100%;
+    height: 100%;
+    max-width: 1152px;
+
+    padding: 0 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*-----------------header----------------*/
+
+.header {
+    margin-top: 24px;
+    padding: 14px 0;
+}
+
+/*-----------------header-wrapper----------------*/
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+
+ 
+
+ /*-----------------setting-wrapper----------------*/
+
+.setting-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+ /*-----------------setting-title----------------*/
+
+.setting-title {
+    font-size: 14px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+ /*-----------------setting-list----------------*/
+
+.setting-list {
+    width: 240px;
+    height: 36px;
+
+    padding:  6px 12px ;
+
+    font-size: 16px;
+    color: #FFFFFF;
+
+    border: 1px solid #4FABFF;
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    outline: none;
+
+    background-color: transparent;
+}
+
+ /*-----------------setting-list----------------*/
+
+ .setting-option {
+    color: #000;
+ }
+
+ /*-----------------section-one--------------------*/
+
+ .section-one {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 15px;
+
+ }
+
+  /*-----------------section-two--------------------*/
+
+  .section-two {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 0 15px;
+    margin-top: 36px;
+
+ }
+
+  /*-----------------section-three--------------------*/
+
+
+ .section-three {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+ }
+
+  /*-----------------img-win--------------------*/
+
+ .img-win {
+    position: absolute;
+
+    top: -20%;
+ }
+ 
+  /*-----------------info-block-wrapper--------------------*/
+
+ .info-block-wrapper {
+    width: 280px;
+    height: 407px;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding-top: 71px;
+
+    border-radius: 7px;
+
+    box-shadow: 0px 2px 10px rgba(255, 255, 255, 0.25);
+
+    background-color: #FFFFFF;
+ }
+
+ /*-----------------finish-title--------------------*/
+
+
+.finish-title {
+    margin-bottom: 4px;
+
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 60px;
+    color: #3676BC;
+}
+
+ /*-----------------finish-subtitle--------------------*/
+
+.finish-subtitle {
+    margin-bottom: 24px;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #3676BC;
+}
+
+ /*-----------------info-element-wrapper--------------------*/
+
+.info-element-wrapper {
+    width: 100%;
+
+    margin-bottom: 24px;
+    padding: 0 24px;
+
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+ /*-----------------info-end--------------------*/
+
+
+.info-end {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #3676BC;
+}
+
+ /*-----------------scores-wrapper--------------------*/
+
+
+ .scores-wrapper{
+    display: flex;
+    align-items: flex-start;
+
+    width: 375px;
+    height: 48px;
+
+    padding: 12px 36px;
+    gap: 107px;
+
+    border-radius: 30px;
+    
+    box-shadow: 0px 4px 8px rgba(88, 150, 238, 0.3);
+
+    background-color: #528CDE;
+ }
+
+ /*-----------------catch-miss-title--------------------*/
+
+ .catch-miss-title,
+ .catch-miss-check {
+    font-size: 18px;
+    color: #FFFFFF;
+ }
+
+ /*-----------------catch-miss-wrapper--------------------*/
+
+ .catch-miss-wrapper{
+    display: flex;
+    gap: 36px;
+ }
+
+ /*-----------------toggle--------------------*/
+
+.toggle-container {
+    width: 36px;
+    height: 20px;
+
+    background-color: transparent;
+
+    border: 1px solid #4FABFF;
+    border-radius: 15px;
+
+    position: relative;
+
+    cursor: pointer;
+}
+.toggle-btn {
+    width: 20px;
+    height: 20px;
+
+    background-image: url(../assets/images/icon.png);
+    background-repeat: no-repeat;
+
+    border-radius: 15px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transition: transform 0.3s;
+}
+.toggle-container.active .toggle-btn {
+    transform: translateX(100%);
+}
+
+ /*-----------------button-wrapper--------------------*/
+
+.button-wrapper {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ /*-----------------button-wrapper--------------------*/
+
+ .btn-start {
+    padding: 12px 36px;
+
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 24px;
+    color: #FFFFFF;
+
+    border: none;
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06), 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+    background-color: #B0C255;
+ }
+
+ .btn-start:hover {
+    transform: scale(99%);
+
+    background-color: #b0c255ea;
+ }
+
+ /*-----------------playing-fieldl--------------------*/
+
+ .playing-field {
+    border-collapse: separate;
+    border-spacing: 12px;
+}
+
+/*-----------------playing-field-cell--------------------*/
+
+.playing-field-cell {
+    width: 85px;
+    height: 85px;
+
+    text-align: center;
+
+    border: 2px solid #54BAE0;
+    border-radius: 5px;
+}
+
+/*-----------------disable-click--------------------*/
+
+
+.disable-click{
+    pointer-events: none; 
+}
+
+
+
+

@@ -276,34 +276,23 @@ input:focus {
 
  /*-----------------toggle--------------------*/
 
-.toggle-container {
-    width: 36px;
-    height: 20px;
-
-    background-color: transparent;
-
-    border: 1px solid #4FABFF;
-    border-radius: 15px;
-
+ .toggle-wrapper {
     position: relative;
 
     cursor: pointer;
-}
-.toggle-btn {
-    width: 20px;
-    height: 20px;
+ }
 
-    background-image: url(../assets/images/icon.png);
-    background-repeat: no-repeat;
-
-    border-radius: 15px;
+ .toggle-btn {
     position: absolute;
-    top: 0;
-    left: 50%;
+
+    top: 0.5px;
+    left: 5%;
+
     transition: transform 0.3s;
-}
-.toggle-container.active .toggle-btn {
-    transform: translateX(100%);
+ }
+
+ .toggle-btn.active {
+    transform: translateX(80%);
 }
 
  /*-----------------button-wrapper--------------------*/

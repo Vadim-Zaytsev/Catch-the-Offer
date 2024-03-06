@@ -84,19 +84,34 @@ export function createSettings() {
     const containerSettingsToggle = document.createElement('div');
     containerSettingsToggle.classList.add('setting-wrapper');
 
+    const toggleWrapper = document.createElement('div');
+    toggleWrapper.classList.add('toggle-wrapper');
+
     const toggleTitle = document.createElement('span');
     toggleTitle.textContent = 'Mute mode';
     toggleTitle.classList.add('setting-title');
 
-    const toggleContainer = document.createElement('div');
-    toggleContainer.classList.add('toggle-container');
+    const toggleFrame = document.createElement('img');
+    toggleFrame.src = 'assets/images/mute/frame.png';
+    toggleFrame.classList.add('toggle-frame');
 
-    const toggleBtn = document.createElement('div');
-    toggleBtn.classList.add('toggle-btn');
+    const toggleBtn = document.createElement('img');
+    toggleBtn.src = 'assets/images/mute/mute_on.png';
+    toggleBtn.classList.add('toggle-btn', 'active');
 
-    toggleContainer.append(toggleBtn);
+    toggleWrapper.append(toggleFrame, toggleBtn);
+    toggleWrapper.addEventListener('click', () => {
+        if (toggleBtn.classList.contains('active')) {
+            toggleBtn.src = 'assets/images/mute/mute_off.png';
 
-    containerSettingsToggle.append(toggleTitle, toggleContainer);
+            toggleBtn.classList.remove('active');
+        } else {
+            toggleBtn.src = 'assets/images/mute/mute_on.png';
+            toggleBtn.classList.add('active');
+        }
+    });
+
+    containerSettingsToggle.append(toggleTitle, toggleWrapper);
 
     arrSettings.push(containerSettingsToggle);
 

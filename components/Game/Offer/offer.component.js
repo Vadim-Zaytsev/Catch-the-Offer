@@ -8,7 +8,9 @@ export function Offer() {
     offerElement.src = data.offer.offerUrl;
 
     offerElement.addEventListener('click', () => {
-        audio.play();
+        if (data.settings.muteMode) {
+            audio.play();
+        }
 
         clickHandler();
     });

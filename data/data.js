@@ -22,6 +22,7 @@ export const data = {
             maximumMissesCount: 3,
             pointsToWin: 3,
         },
+        muteMode: true,
     },
 
     date: null,
@@ -79,7 +80,6 @@ export function clickHandler() {
         return;
     }
     catchOffer();
-    console.log('Click event handled');
 }
 
 //------------------------------------------------------------
@@ -113,7 +113,6 @@ export function restartGame() {
     data.gameStatus = GAME_STATUSES.SETTINGS;
 
     subscriber();
-    location.reload();
 }
 
 //-----------------------Create a random coordinate-------------------
@@ -146,6 +145,12 @@ export function catchOffer() {
             gameDuration();
 
             data.gameStatus = GAME_STATUSES.FINISH;
+
+            const audio = new Audio('../assets/sound/win.mp3');
+
+            if (data.settings.muteMode) {
+                audio.play();
+            }
         } else {
             jumpOfferToRandomPosition();
             runJumpInterval();
@@ -175,6 +180,12 @@ function missOffer() {
     data.canHandleClick = false;
     clearInterval(jumpIntervalId);
 
+    const audio = new Audio('../assets/sound/miss.mp3');
+
+    if (data.settings.muteMode) {
+        audio.play();
+    }
+
     data.offer.offerUrl = 'assets/images/offer_miss.png';
     subscriber();
 
@@ -184,10 +195,17 @@ function missOffer() {
             data.scores.missesCount ===
             data.settings.endGameConditions.maximumMissesCount
         ) {
+            data.canHandleClick = false;
+
             gameDuration();
 
             data.gameStatus = GAME_STATUSES.FINISH;
-            data.canHandleClick = true;
+
+            const audio = new Audio('../assets/sound/lose.mp3');
+
+            if (data.settings.muteMode) {
+                audio.play();
+            }
 
             clearInterval(jumpIntervalId);
         } else {

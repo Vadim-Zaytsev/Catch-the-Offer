@@ -1,3 +1,4 @@
+import { data } from '../../../data/data.js';
 import { Settings } from './class-settings/class-settings.component.js';
 
 export function createSettings() {
@@ -82,7 +83,7 @@ export function createSettings() {
     //-----------------------Setting Mute mode-------------------
 
     const containerSettingsToggle = document.createElement('div');
-    containerSettingsToggle.classList.add('setting-wrapper');
+    containerSettingsToggle.classList.add('setting-wrapper', 'mute');
 
     const toggleWrapper = document.createElement('div');
     toggleWrapper.classList.add('toggle-wrapper');
@@ -104,10 +105,14 @@ export function createSettings() {
         if (toggleBtn.classList.contains('active')) {
             toggleBtn.src = 'assets/images/mute/mute_off.png';
 
+            data.settings.muteMode = false;
+
             toggleBtn.classList.remove('active');
         } else {
             toggleBtn.src = 'assets/images/mute/mute_on.png';
             toggleBtn.classList.add('active');
+
+            data.settings.muteMode = true;
         }
     });
 

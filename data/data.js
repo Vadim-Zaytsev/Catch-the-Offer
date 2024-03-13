@@ -28,7 +28,7 @@ export const data = {
     date: null,
 
     offer: {
-        clickAllowed: false,
+        // clickAllowed: false,
         offerUrl: 'assets/images/offer.png',
     },
 
@@ -54,6 +54,7 @@ export const dataSettings = {
         '60 pts': 60,
         '80 pts': 80,
         '100 pts': 100,
+        test: 1,
     },
     intervalBetweenOfferJumps: {
         '2000 ms': 2000,
@@ -70,6 +71,7 @@ export const dataSettings = {
         9: 9,
         11: 11,
         15: 15,
+        test: 1,
     },
 };
 
@@ -208,6 +210,8 @@ function missOffer() {
             }
 
             clearInterval(jumpIntervalId);
+
+            data.canHandleClick = true;
         } else {
             data.canHandleClick = true;
             data.offer.offerUrl = 'assets/images/offer.png';

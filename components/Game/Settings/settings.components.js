@@ -29,7 +29,7 @@ export function createSettings() {
     containerSettingsPointsWin.classList.add('setting-wrapper');
 
     const settingsPointsWin = new Settings(
-        ['20 pts', '30 pts', '40 pts', '60 pts', '80 pts', '100 pts'],
+        ['20 pts', '30 pts', '40 pts', '60 pts', '80 pts', '100 pts', 'test'],
         'Points to win',
         'setting-title',
         'setting-list',
@@ -67,7 +67,7 @@ export function createSettings() {
     containerMaximumMisses.classList.add('setting-wrapper');
 
     const settingsMaximumMisses = new Settings(
-        [3, 5, 7, 9, 11, 15],
+        [3, 5, 7, 9, 11, 15, 'test'],
         'Maximum misses',
         'setting-title',
         'setting-list',
